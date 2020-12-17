@@ -1,0 +1,264 @@
+{
+	"info": {
+		"_postman_id": "a1fac348-8e03-4456-9d3f-20ae1d369a84",
+		"name": "The-put-problem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "initial version",
+			"item": [
+				{
+					"name": "01 -Get Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/Customer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Update Premium Flag",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"John\",\n    \"city\": \"Cracow\",\n    \"isPremiumMember\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/Customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Update City",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"John\",\n    \"city\": \"Warsaw\",\n    \"isPremiumMember\": false\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/Customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Customer"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "versioning",
+			"item": [
+				{
+					"name": "01 - Get Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/Customer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Update Premium Flag",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"John\",\n    \"city\": \"Cracow\",\n    \"isPremiumMember\": true,\n    \"version\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/Customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Update City",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"John\",\n    \"city\": \"Warsaw\",\n    \"isPremiumMember\": false,\n    \"version\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/Customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Customer"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "patch",
+			"item": [
+				{
+					"name": "01 - Get Customer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/Customer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02 - Update Premium Flag",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n {\n  \"op\": \"replace\",\n  \"path\": \"/isPremiumMember\",\n  \"value\": true\n }\n]"
+						},
+						"url": {
+							"raw": "http://localhost:5000/Customer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "03 - Update City",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n {\n  \"op\": \"replace\",\n  \"path\": \"/city\",\n  \"value\": \"Warsaw\"\n }\n]"
+						},
+						"url": {
+							"raw": "http://localhost:5000/Customer/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"Customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
